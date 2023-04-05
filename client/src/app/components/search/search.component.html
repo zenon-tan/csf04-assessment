@@ -1,0 +1,13 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="processForm()">
+        <table>
+            <tr>
+                <td>Movie name:</td>
+                <td><input type="text" formControlName="query"></td>
+            </tr>
+            <tr>
+                <td><button type="submit" [disabled]="form.invalid || checkIfWhiteSpace()">Search</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
