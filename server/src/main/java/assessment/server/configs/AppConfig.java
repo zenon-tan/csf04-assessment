@@ -21,7 +21,4 @@ public class AppConfig {
         MongoClient client = MongoClients.create(mongoUrl);
         return new MongoTemplate(client, DB_CSF);
     }
-
-
-    
 }

@@ -17,7 +17,7 @@ public class MovieRepository {
     @Autowired
     MongoTemplate mongoTemplate;
 
-    // TODO: Task 5
+    // Task 5
 	// You may modify the parameter but not the return type
 	// Write the native mongo database query in the comment below
 	//
@@ -36,7 +36,7 @@ public class MovieRepository {
 
 	}
 
-    // TODO: Task 8
+    // Task 8
 	// Write a method to insert movie comments comments collection
 	// Write the native mongo database query in the comment below
 	//
@@ -55,6 +55,5 @@ public class MovieRepository {
         mongoTemplate.insert(doc, DB_COMMENTS);
 
     }
-
 
 }

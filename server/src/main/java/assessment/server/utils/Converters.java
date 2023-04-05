@@ -31,7 +31,6 @@ public class Converters {
 		jj.stream().forEach(
 			v -> {
 				JsonObject obj = v.asJsonObject();
-				// System.out.println(obj);
 
 				Review review = new Review();
 				review.setTitle(obj.getString("display_title"));
@@ -60,7 +59,6 @@ public class Converters {
 		System.out.println(reviews);
 
 		return reviews;
-
 
 	}
 
