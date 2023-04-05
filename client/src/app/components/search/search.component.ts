@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      query: this.fb.control<string>('', [Validators.required])
+      query: this.fb.control<string>('', [Validators.required, Validators.minLength(2)])
     })
   }
 
