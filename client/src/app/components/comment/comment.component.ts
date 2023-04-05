@@ -41,7 +41,7 @@ export class CommentComponent implements OnInit, OnDestroy {
 
     this.form = this.fb.group({
       name: this.fb.control<string>('', [Validators.required, Validators.minLength(3)]),
-      rating: this.fb.control<number>(3, [Validators.required, Validators.max(5)]),
+      rating: this.fb.control<number>(3, [Validators.required, Validators.max(5), Validators.min(1)]),
       comment: this.fb.control<string>("", [Validators.required])
     })
   }

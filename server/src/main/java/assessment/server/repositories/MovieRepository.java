@@ -43,7 +43,7 @@ public class MovieRepository {
 
     /*
     db.comments.insertOne( {
-    name: "test",
+    name: "Wanda Maximoff",
     title: "Avengers: Endgame",
     rating: 5,
     comment: "Slay of the century"
