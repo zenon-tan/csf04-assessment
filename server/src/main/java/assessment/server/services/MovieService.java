@@ -1,5 +1,6 @@
 package assessment.server.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +31,12 @@ public class MovieService {
 	// DO NOT CHANGE THE METHOD'S SIGNATURE
 	public List<Review> searchReviews(String query) {
 
-		String nq = query.replace(" ", "%20");
-
 		String url = UriComponentsBuilder.fromUriString(NYT_API)
-		.queryParam("query", query)
+		.queryParam("query", query.replaceAll(" ", "+"))
 		.queryParam("api-key", apiKey)
 		.toUriString();
+
+		System.out.println(url);
 
 		RequestEntity<Void> req = RequestEntity.get(url)
         .accept(MediaType.APPLICATION_JSON).build();
@@ -46,7 +47,8 @@ public class MovieService {
 
 		try {
 			resp = template.exchange(req, String.class);
-			System.out.println(mRepo.countComments("Avengers: Endgame"));
+
+			System.out.println(resp.getBody());
 
 			List<Review> reviews = Converters.toReview(resp.getBody());
 			reviews.stream().forEach(
@@ -61,7 +63,7 @@ public class MovieService {
 			return reviews;
 
 		} catch (Exception e) {
-			return null;
+			return new ArrayList<>();
 		}
 		// return null;
 	}

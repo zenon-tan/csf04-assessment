@@ -51,6 +51,7 @@ public class Converters {
                     review.setImage("");
                 }
 
+                System.out.println(review);
 				reviews.add(review);
 
 			}

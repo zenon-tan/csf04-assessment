@@ -30,7 +30,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
       }
     )
 
-    this.mSrc.getMovies(this.query).then(
+    this.mSrc.getMovies(this.query.toLowerCase()).then(
       (data:any) => {
         this.reviews = data['results'] as Review[]
         console.info(this.reviews)

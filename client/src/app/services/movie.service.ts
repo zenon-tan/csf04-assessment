@@ -16,7 +16,7 @@ export class MovieService {
   getMovies(query: string) {
 
     const params = new HttpParams()
-    .append('query', query)
+    .append('query', query.toLowerCase())
 
     console.info(query)
 
